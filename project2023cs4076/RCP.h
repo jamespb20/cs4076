@@ -88,6 +88,17 @@ protected:
             }
         }
     }
+    void calorieChecker(int cal){
+        for (int i = 0; i < 4; i++){
+            if (calories[i] < cal){
+                cout << names[i] << endl;
+                cout << descriptions[i] << endl;
+                cout << ingredients[i] << endl;
+                cout << cookingSteps[i] << endl;
+                cout << calories[i] << endl;
+            }
+        }
+    }
 };
 
 #endif // RCP_H
