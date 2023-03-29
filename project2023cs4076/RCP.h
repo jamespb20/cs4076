@@ -2,6 +2,8 @@
 #define RCP_H
 #include <iostream>
 #include <string>
+#include "mainwindow.h"
+#include "QStringList"
 using namespace std;
 
 class recipes{
@@ -17,7 +19,6 @@ protected:
 
   public:
     recipes() {
-      // initialize arrays with recipe data
       names[0] = "Chicken Stir-Fry";
       descriptions[0] = "A delicious stir-fry with chicken, vegetables, and rice.";
       ingredients[0] = "chicken breast, mixed vegetables, rice, soy sauce";
@@ -62,7 +63,7 @@ protected:
                 cout << descriptions[i] << endl;
                 cout << ingredients[i] << endl;
                 cout << cookingSteps[i] << endl;
-                cout << calories[i] << endl;
+                cout << "Calories: " <<calories[i] << endl;
             }
         }
     }
@@ -73,7 +74,7 @@ protected:
                 cout << descriptions[i] << endl;
                 cout << ingredients[i] << endl;
                 cout << cookingSteps[i] << endl;
-                cout << calories[i] << endl;
+                cout << "Calories: " <<calories[i] << endl;
             }
         }
     }
@@ -84,7 +85,7 @@ protected:
                 cout << descriptions[i] << endl;
                 cout << ingredients[i] << endl;
                 cout << cookingSteps[i] << endl;
-                cout << calories[i] << endl;
+                cout << "Calories: " <<calories[i] << endl;
             }
         }
     }
@@ -95,10 +96,17 @@ protected:
                 cout << descriptions[i] << endl;
                 cout << ingredients[i] << endl;
                 cout << cookingSteps[i] << endl;
-                cout << calories[i] << endl;
+                cout << "Calories: " <<calories[i] << endl;
             }
         }
     }
+    friend void MainWindow::on_allButton_toggled(bool checked);
+
+    friend void MainWindow::on_vegetarianButton_toggled(bool checked);
+
+    friend void MainWindow::on_veganButton_toggled(bool checked);
+
+    friend void MainWindow::on_glutenButton_toggled(bool checked);
 };
 
 #endif // RCP_H

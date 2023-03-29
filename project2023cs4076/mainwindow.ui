@@ -14,48 +14,116 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>170</x>
       <y>10</y>
-      <width>160</width>
+      <width>621</width>
       <height>531</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QCheckBox" name="checkBox_2">
+      <widget class="QLabel" name="nameLabel">
        <property name="text">
-        <string>Vegetarian</string>
+        <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkBox_3">
+      <widget class="QLabel" name="descLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="ingredientLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="stepsLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="calLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="prevButton">
+       <property name="text">
+        <string>Previous</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="nextButton">
+       <property name="text">
+        <string>Next</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>11</y>
+      <width>160</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QRadioButton" name="allButton">
+       <property name="text">
+        <string>All Recipes</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QRadioButton" name="veganButton">
        <property name="text">
         <string>Vegan</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_4">
+     <item row="5" column="1">
+      <widget class="QLabel" name="maxCals">
        <property name="text">
-        <string>Normal</string>
+        <string/>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox">
+     <item row="4" column="1">
+      <widget class="QRadioButton" name="glutenButton">
        <property name="text">
         <string>Gluten Free</string>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
+     <item row="2" column="1">
+      <widget class="QRadioButton" name="vegetarianButton">
        <property name="text">
-        <string>Search</string>
+        <string>Vegetarian</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QSlider" name="calSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
@@ -71,8 +139,27 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuClick_here">
+    <property name="title">
+     <string>Click here</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionReset"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuClick_here"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
