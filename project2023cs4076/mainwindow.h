@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,7 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-public slots:
+    void addStuffToLists(string name, string desc, string step, string ingredient, int calories, bool vegCheck, bool veganCheck, bool glutenCheck);public slots:
     void on_allButton_toggled(bool checked);
 
     void on_vegetarianButton_toggled(bool checked);
@@ -22,14 +24,16 @@ public slots:
     void on_veganButton_toggled(bool checked);
 
     void on_glutenButton_toggled(bool checked);
-private slots:
-    void on_prevButton_clicked();
 
     void on_nextButton_clicked();
+private slots:
+    void on_prevButton_clicked();
 
     void on_horizontalSlider_valueChanged(int value);
 
     void on_calSlider_valueChanged(int value);
+
+    void on_actionAdd_Recipe_triggered();
 
 private:
     Ui::MainWindow *ui;

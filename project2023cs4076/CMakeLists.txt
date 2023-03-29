@@ -18,6 +18,9 @@ set(PROJECT_SOURCES
         mainwindow.h
         mainwindow.ui
         RCP.h
+        newrecipe.h
+        newrecipe.cpp
+        newrecipe.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

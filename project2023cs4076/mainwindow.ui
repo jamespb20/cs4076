@@ -80,50 +80,71 @@
      <rect>
       <x>0</x>
       <y>11</y>
-      <width>160</width>
+      <width>188</width>
       <height>471</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
+     <item row="0" column="0">
       <widget class="QRadioButton" name="allButton">
        <property name="text">
         <string>All Recipes</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="3" column="0">
       <widget class="QRadioButton" name="veganButton">
        <property name="text">
         <string>Vegan</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="1">
+     <item row="5" column="0">
       <widget class="QLabel" name="maxCals">
        <property name="text">
         <string/>
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
+     <item row="4" column="0">
       <widget class="QRadioButton" name="glutenButton">
        <property name="text">
         <string>Gluten Free</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
+     <item row="2" column="0">
       <widget class="QRadioButton" name="vegetarianButton">
        <property name="text">
         <string>Vegetarian</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="0">
-      <widget class="QSlider" name="calSlider">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+     <item row="3" column="1">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>
@@ -139,25 +160,18 @@
      <height>25</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuClick_here">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>Click here</string>
+     <string>File</string>
     </property>
-    <addaction name="separator"/>
-    <addaction name="actionReset"/>
-    <addaction name="actionExit"/>
+    <addaction name="actionAdd_Recipe"/>
    </widget>
-   <addaction name="menuClick_here"/>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionReset">
+  <action name="actionAdd_Recipe">
    <property name="text">
-    <string>Reset</string>
-   </property>
-  </action>
-  <action name="actionExit">
-   <property name="text">
-    <string>Exit</string>
+    <string>Add Recipe</string>
    </property>
   </action>
  </widget>

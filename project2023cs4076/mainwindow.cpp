@@ -4,6 +4,8 @@
 #include "RCP.h"
 #include <QDebug>
 #include <QListWidget>
+#include <QVector>
+#include "newrecipe.h"
 
 using namespace std;
 int counter = 0;
@@ -11,6 +13,7 @@ bool all = false;
 bool vege = false;
 bool vegan = false;
 bool gluten = false;
+recipes r;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -23,6 +26,17 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::addStuffToLists(string name, string desc, string step, string ingredient, int calories, bool vegCheck, bool veganCheck, bool glutenCheck){
+    r.names.append(name);
+    r.descriptions.append(desc);
+    r.cookingSteps.append(step);
+    r.ingredients.append(ingredient);
+    r.calories.append(calories);
+    r.vegetarian.append(vegCheck);
+    r.vegan.append(veganCheck);
+    r.glutenFree.append(glutenCheck);
 }
 void MainWindow::on_prevButton_clicked()
 {
@@ -44,8 +58,8 @@ void MainWindow::on_prevButton_clicked()
 
 void MainWindow::on_nextButton_clicked()
 {
-    if (counter == 3){
-        counter = 3;
+    if (counter > r.names.length()){
+        counter = r.names.length();
     } else{
         counter++;
     }
@@ -67,7 +81,6 @@ void MainWindow::on_allButton_toggled(bool checked)
     vege = false;
     vegan = false;
     gluten = false;
-    recipes r;
     QString calString = "Calories: ";
     calString.append(QString::number(r.calories[counter]));
     ui -> nameLabel -> setText(QString::fromStdString(r.names[counter]));
@@ -85,7 +98,6 @@ void MainWindow::on_vegetarianButton_toggled(bool checked)
     vege = true;
     vegan = false;
     gluten = false;
-    recipes r;
     for (int i = 0; i < 4; i++){
         if (r.vegetarian[counter] == false){
             counter++;
@@ -94,11 +106,11 @@ void MainWindow::on_vegetarianButton_toggled(bool checked)
         }
     }
     QString calString = "Calories: ";
-    calString.append(QString::number(r.calories[counter]));
-    ui -> nameLabel -> setText(QString::fromStdString(r.names[counter]));
-    ui -> descLabel -> setText(QString::fromStdString(r.descriptions[counter]));
-    ui -> ingredientLabel -> setText(QString::fromStdString(r.ingredients[counter]));
-    ui -> stepsLabel -> setText(QString::fromStdString(r.cookingSteps[counter]));
+    calString.append(QString::number(r.calories.at(counter)));
+    ui -> nameLabel -> setText(QString::fromStdString(r.names.at(counter)));
+    ui -> descLabel -> setText(QString::fromStdString(r.descriptions.at(counter)));
+    ui -> ingredientLabel -> setText(QString::fromStdString(r.ingredients.at(counter)));
+    ui -> stepsLabel -> setText(QString::fromStdString(r.cookingSteps.at(counter)));
     ui -> calLabel -> setText(calString);
     cout << counter << endl;
 }
@@ -110,7 +122,6 @@ void MainWindow::on_veganButton_toggled(bool checked)
     vege = false;
     vegan = true;
     gluten = false;
-    recipes r;
     for (int i = 0; i < 4; i++){
         if (r.vegan[counter] == false){
             counter++;
@@ -134,7 +145,6 @@ void MainWindow::on_glutenButton_toggled(bool checked)
     vege = false;
     vegan = false;
     gluten = true;
-    recipes r;
     for (int i = 0; i < 4; i++){
         if (r.glutenFree[counter] == false){
             counter++;
@@ -153,13 +163,11 @@ void MainWindow::on_glutenButton_toggled(bool checked)
 }
 
 
-
-
-void MainWindow::on_calSlider_valueChanged(int value)
+void MainWindow::on_actionAdd_Recipe_triggered()
 {
-    QString calString = "Calories: ";
-    calString.append(QString::number(value));
-    ui -> maxCals -> setText(calString);
-    cout << value << endl;
+    newrecipe recipenew;
+    recipenew.setModal(true);
+    recipenew.exec();
+
 }
 
