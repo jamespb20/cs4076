@@ -35,6 +35,8 @@ private slots:
 
     void on_actionAdd_Recipe_triggered();
 
+    void on_actionExit_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -46,13 +46,13 @@ void newrecipe::on_descText_textChanged()
 
 void newrecipe::on_ingredientBox_textChanged()
 {
-    ingredient = ui->nameText->toPlainText();
+    ingredient = ui->ingredientBox->toPlainText();
     newIngredient = ingredient.toStdString();
 }
 
 void newrecipe::on_stepText_textChanged()
 {
-    step = ui->nameText->toPlainText();
+    step = ui->stepText->toPlainText();
     newStep = step.toStdString();
 }
 
@@ -69,7 +69,6 @@ void newrecipe::on_veganBox_toggled(bool checked)
 void newrecipe::on_glutenBox_toggled(bool checked)
 {
     glutenCheck = checked;
-    cout << glutenCheck << endl;
 }
 
 void newrecipe::on_calSlider_valueChanged(int value)
